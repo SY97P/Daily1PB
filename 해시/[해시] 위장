@@ -1,0 +1,18 @@
+
+def solution(clothes):
+    answer = 1
+    
+    dic = {}
+    
+    for item in clothes :
+        if item[1] in dic.keys() :
+            dic[item[1]] += 1
+        else :
+            dic[item[1]] = 1
+    
+    print(dic)
+    
+    for value in dic.values() :
+        answer *= (value + 1)
+    
+    return answer-1
