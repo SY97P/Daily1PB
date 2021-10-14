@@ -1,0 +1,21 @@
+import heapq
+
+# 그냥 정렬로 풀 수 있지 않을까?
+# 근데 heap으로 푸는게 훨씬 편했다. 
+def solution(scoville, K):
+    heapq.heapify(scoville)
+    answer = 0
+    
+    if (scoville[0] >= K) :
+        return 1
+    
+    while scoville[0] < K and len(scoville) > 1 :
+        answer += 1
+        first = heapq.heappop(scoville)
+        second = heapq.heappop(scoville)
+        heapq.heappush(scoville, first + 2 * second)
+        
+    if (scoville[0] < K) :
+        return -1
+    
+    return answer
