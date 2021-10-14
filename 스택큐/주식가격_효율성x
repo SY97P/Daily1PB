@@ -1,0 +1,22 @@
+def solution(prices):
+  answer = []
+
+  count = len(prices)
+  while prices != [] :
+    count -= 1
+    curr = prices.pop(0)
+    if not prices : 
+      answer.append(0)
+    else :
+      if (curr <= min(prices)) :
+        answer.append(count)
+    # 큰 게 하나라도 있다면
+      else :
+        for i in range(len(prices)) :
+          # 가격이 떨어지는 가장 가까운 위치를 찾음.
+          if (curr > prices[i]) :
+            answer.append(i+1)
+            break
+    # print(answer)
+
+  return answer
