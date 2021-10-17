@@ -1,0 +1,16 @@
+def solution(citations):
+    citations.sort(reverse = True)
+    
+    # 파이썬스럽게 index i 없이 list 출력
+    # enumerate -> tuple
+    for i in enumerate(citations, start=1) :
+        print(i)
+        
+    # map(min, enumerate) -> min between two tuple elements
+    answer = map(min, enumerate(citations, start = 1)) 
+        
+    # 게 중에 최대값이 정답
+    answer = max(map(min, enumerate(citations, start = 1)))
+    
+    return answer
+    
