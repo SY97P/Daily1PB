@@ -1,0 +1,26 @@
+def solution(citations):
+    citations.sort(reverse = True)
+    
+    print(citations)
+    
+    count = 0
+    for i in range(len(citations) - 1) :
+        count += 1
+        if (count == citations[i]) :
+            return count
+        elif (count < citations[i]) :
+            curr = citations[i]
+            while (curr > citations[i+1]) :
+                curr -= 1
+                if (count == curr) :
+                    return count
+        else :
+            curr = citations[i]
+            if (curr == 0) :
+                return 0
+            while (curr < citations[i-1]) :
+                curr += 1
+                if (count == curr) :
+                    return count
+    
+    return count+1
