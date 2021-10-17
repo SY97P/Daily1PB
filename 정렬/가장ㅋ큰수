@@ -1,0 +1,11 @@
+def solution(numbers):
+    answer = ''
+
+    numbers = list(map(str, numbers))
+    # print(numbers)
+
+    # numbers = sorted(numbers, key = str) 로 해도 됨.
+    numbers = sorted(numbers, key = lambda x : x*3, reverse = True)
+    # print(numbers)
+
+    return str(int(answer.join(numbers)))
