@@ -1,2 +1,8 @@
-language = "bash"
-run = "python 그리드/소수찾기.py"
+run="python ./그리드/카펫.py"
+language="python3"
+onBoot="echo Booting up!"
+
+[packager]
+afterInstall="date >> package_install_log"
+ignoredPaths=[".git"]
+ignoredPackages=["twitter", "discord"]
