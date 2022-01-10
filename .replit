@@ -1,4 +1,4 @@
-run="python ./그리드/카펫.py"
+run="python ./완전탐색/체육복.py"
 language="python3"
 onBoot="echo Booting up!"
 
