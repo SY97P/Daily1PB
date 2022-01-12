@@ -1,59 +1,20 @@
-def solution(name) :
-	answer = 0
-	# 'A' = 65 'Z' = 91
-	alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-	# #print(len(alphabet))
-	# for idx, item in enumerate(name) : 
-	# 	#print(idx, item)
-	# 	if (item == 'A') :
-	# 		answer += 1
-	# 	else :
-	# 		forward = ord(item) - 65
-	# 		backward = 91 - ord(item)
-	# 		#print(forward, backward)
-	# 		answer += min(forward, backward) + 1
-
-	# 		front, back = 0, 0
-	# 		for i in range(1, len(name)+1) :
-	# 			if (name[(idx + i) % len(name)] != 'A') :
-	# 				front = i
-	# 				break
-	# 		for i in range(1, len(name)+1) :
-	# 			if (name[(idx - i)] != 'A') :
-	# 				back = i
-	# 				break
-	# 		#print(item, front, back)
-	# 		if front < back : 
-	index = 0
-	count = 0
-	while count < len(name) :
-		if name[index] == 'A' :
-			answer += 1
-			count += 1
-		else :
-			forward = ord(name[index]) - 65
-			backward = 91 - ord(name[index])
-			answer += min(forward, backward) + 1
-			count += 1
-
-			front, back = 0, 0
-			for i in range(1, len(name) + 1) :
-				if (name[(index + i) % len(name)] != 'A') :
-					front = i
-					break
-			for i in range(1, len(name) + 1) :
-				if (name[(index - i)] != 'A') :
-					back = i
-					break
-			if (front < back) : 
-				index += front
-			else :
-				index -= back
-			print(index, name[index])
-
-				
-			
-	return answer-1
+def solution(name):
+    answer = 0
+    min_left_right = len(name) # 왼쪽에서 오른쪽으로만 이동할 때 좌,우 조작 횟수
+    next_idx = 0
+    for idx, char in enumerate(name):
+        # 위, 아래 조작 횟수의 최솟값 구하기
+        answer += min(ord(char) - ord('A'), ord('Z') - ord(char) + 1)
+        
+        # 좌, 우 조작 횟수의 최솟값 구하기
+        next_idx = idx + 1
+        while next_idx < len(name) and name[next_idx] == 'A':
+            next_idx += 1 # 현재 위치 이후 연속된 A 다음의 문자를 가리킴
+        
+        # 한 방향으로만 이동하는 경우와, 오른쪽으로 이동했다가 왼쪽으로 이동하는 경우를 비교
+        min_left_right = min(min_left_right, idx + idx + len(name) - next_idx)
+    answer += min_left_right
+    return answer
 
 
 def main() :

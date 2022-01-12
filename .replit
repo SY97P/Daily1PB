@@ -1,8 +1,8 @@
-run="python3 ./그리드/체육복.py"
-language="python3"
-onBoot="echo Booting up!"
+run="python3 ./그리드/조이스틱.py"
+#language="python3"
+#onBoot="echo Booting up!"
 
-[packager]
-afterInstall="date >> package_install_log"
-ignoredPaths=[".git"]
-ignoredPackages=["twitter", "discord"]
+#[packager]
+#afterInstall="date >> package_install_log"
+#ignoredPaths=[".git"]
+#ignoredPackages=["twitter", "discord"]
