@@ -1,13 +1,21 @@
 from itertools import combinations
 
 def solution(number, k) :
-	maxValue = -1
-	# lst = list(map(''.join, combinations(number, len(number)-k)))
-	# for item in lst : 
-	# 	if (maxValue < int(item)) :
-	# 		maxValue = int(item)
-	# return str(maxValue)
-	return max(list(map(''.join, combinations(number, len(number)-k))))
+	answer = []
+	index = -1
+	for num in number :
+		if not answer :
+			answer.append(num)
+			continue
+		if k > 0 :
+			while answer[-1] < num :
+				answer.pop()
+				k -= 1
+				if not answer or k <= 0 :
+					break
+		answer.append(num)
+	answer = answer[:-k] if k > 0  else answer
+	return ''.join(answer)
 
 def main() :
 	number, k = "1924", 2			# 94
