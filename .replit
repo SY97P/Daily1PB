@@ -1,4 +1,4 @@
-run="python3 ./그리드/섬연결하기.py"
+run="python3 ./동적계획법/n으로표현.py"
 #tokenKey = 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
 #language="python3"
 #onBoot="echo Booting up!"
