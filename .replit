@@ -1,5 +1,5 @@
 run="python3 ./동적계획법/등굣길.py"
-# token key = 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
+# token key = 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
 #language="python3"
 #onBoot="echo Booting up!"
 
