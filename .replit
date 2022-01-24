@@ -1,4 +1,5 @@
-run="python3 ./동적계획법/n으로표현.py"
+run="python3 ./동적계획법/정수삼각형.py"
+# token key = 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
 #language="python3"
 #onBoot="echo Booting up!"
 
