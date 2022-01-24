@@ -1,4 +1,4 @@
-run="python3 ./동적계획법/등굣길.py"
+run="python3 ./깊이너비우선탐색/네트워크.py"
 # token key = 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
 #language="python3"
 #onBoot="echo Booting up!"
