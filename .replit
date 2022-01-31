@@ -1,4 +1,4 @@
-run="python3 ./깊이너비우선탐색/네트워크.py"
+run="python3 ./깊이너비우선탐색/여행경로.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
