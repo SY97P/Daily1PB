@@ -1,4 +1,4 @@
-run="python3 ./그래프/순위.py"
+run="python3 ./해시/전화번호목록2.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
