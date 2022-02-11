@@ -1,4 +1,4 @@
-run="python3 ./해시/베스트앨범.py"
+run="python3 ./스택큐/기능개발.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
