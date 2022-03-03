@@ -1,4 +1,4 @@
-run="python3 ./힙/이중우선순위큐.py"
+run="python3 ./정렬/가장큰수.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
