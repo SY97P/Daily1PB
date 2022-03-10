@@ -19,30 +19,31 @@ def solution(number, k) :
 			queue.append(num)
 			continue
 		while queue :
-			if queue[len(queue)-1] < num : 
+			if queue[len(queue)-1] < num and count < k : 
 				queue.pop()
 				count += 1
 				if not queue : 
 					queue.append(num)
 					break
 				if count >= k : 
+					queue.append(num)
 					break 
 			else : 
-				if len(queue) < len(number) - k : 
+				if len(queue) < len(number) - k : 					
 					queue.append(num)
 				break
-		print(num, queue)
+		print(num, count, queue)
 	return ''.join(queue) if len(queue) >= len(number) - k else ''.join(queue)
 				
 	
 def main() : 
 	number, k = "1924"	,2		# "94"
 	#number, k = "1231234",	3	# "3234"
-	#number, k = "4177252841",4	# "775841"
+	number, k = "4177252841",4	# "775841"
 	number, k = "54321", 1		# "5432"
 	number, k = "54312", 1		# "5432"
-	#number, k = "543112", 1     # "54312"
-	#number, k = "54221123", 5	# "543"
+	number, k = "543112", 1     # "54312"
+	number, k = "54221123", 5	# "543"
 	print("solution : ", solution(number, k))
 
 main()
