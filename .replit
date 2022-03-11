@@ -1,4 +1,4 @@
-run="python3 ./동적계획법/정수삼각형2.py"
+run="python3 ./동적계획법/도둑질.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
