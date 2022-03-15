@@ -3,6 +3,7 @@ def solution(tickets) :
 	answer = dfs(size, tickets, "ICN")
 	return answer
 
+# 꼭 return line에 재귀를 넣어줄 필요가 없었음. **
 def dfs(size, tickets, start) :
 	# print("start : ", start)
 	candi = []
