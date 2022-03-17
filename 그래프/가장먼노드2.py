@@ -49,8 +49,12 @@ def solution(n, edge) :
 		adj[e[0]-1].append(e[1])
 		adj[e[1]-1].append(e[0])
 	print(adj)
-	
 
+	for i, ad in enumerate(adj) : 
+		visited = [-1] * (n + 1)
+		for j, a in enumerate(ad) : 
+			if visited[j] == -1 :
+				visited
 def main() : 
 	n, edge = 6,[[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]	# 3
 	n, edge = 2,[[2,1]] # 1
