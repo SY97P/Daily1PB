@@ -1,3 +1,42 @@
+# 안 곱창난 풀이법
+from collections import deque
+def solution(n, edge) : 
+	answer = 0
+	adj = [[] for i in range(n+1)]
+	for e in edge : 
+		x, y = e 
+		adj[x].append(y)
+		adj[y].append(x)
+	print(adj)
+	visited = [-1 for i in range(n+1)]
+
+	bfs(1, visited, adj)
+
+	return visited.count(max(visited))
+
+def bfs(node, visited, adj) : 
+	count = 0
+	deq = deque([[node, count]])
+	while deq : 
+		curr = deq.popleft()
+		node, count = curr
+		if visited[node] == -1 : 
+			visited[node] = count
+			count += 1
+			for a in adj[node] : 
+				deq.append([a, count])
+	return visited
+		
+	
+def main() : 
+	n, edge = 6,[[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]	# 3
+	# n, edge = 2,[[2,1]] 			# 1
+	# n, edge = 3,[[3,1],[2,1],[2,3]]	# 2
+	print("solution : ", solution(n, edge))
+
+main()
+
+
 # 곱창난 풀이법
 # def solution(n, edge) : 
 # 	max_count, max_value = 0, 0
@@ -38,27 +77,3 @@
 # 				min_count = temp 
 
 # 	return min_count
-
-# 안 곱창난 풀이법
-from collections import deque
-def solution(n, edge) : 
-	answer = 0
-	deq = deque()
-	adj = [[] for i in range(n)]
-	for e in edge : 
-		adj[e[0]-1].append(e[1])
-		adj[e[1]-1].append(e[0])
-	print(adj)
-
-	for i, ad in enumerate(adj) : 
-		visited = [-1] * (n + 1)
-		for j, a in enumerate(ad) : 
-			if visited[j] == -1 :
-				visited
-def main() : 
-	n, edge = 6,[[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]	# 3
-	n, edge = 2,[[2,1]] # 1
-	n, edge = 3,[[3,1],[2,1],[2,3]]
-	print("solution : ", solution(n, edge))
-
-main()

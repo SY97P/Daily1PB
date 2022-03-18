@@ -1,4 +1,4 @@
-run="python3 ./그래프/가장먼노드2.py"
+run="python3 ./그래프/방의개수.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
