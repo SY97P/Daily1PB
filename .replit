@@ -1,4 +1,4 @@
-run="python3 ./정렬/h_index2.py"
+run="python3 ./그리디/섬연결하기3.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
