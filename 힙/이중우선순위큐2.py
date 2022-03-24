@@ -11,19 +11,17 @@ def solution(operations) :
 
 		if command == "D" :
 			if queue : 
-				if value == 1 : # 최대값 삭제
-					heapq.heap(queue)
+				if value == "1" : # 최대값 삭제
+					queue.remove(max(queue))
 				else : 			# 최소값 삭제
 					heapq.heappop(queue)
 		else : 
+			value = int(value)
 			heapq.heappush(queue, value)
 
-		for q in queue : 
-			print(q, end = " ")
-		print()
-
-	for q in queue : 
-		print(q)
+		# for q in queue : 
+		# 	print(q, end = " ")
+		# print()
 
 	if queue : 
 		answer = [int(max(queue)), int(min(queue))]
