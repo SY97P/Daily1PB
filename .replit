@@ -1,4 +1,4 @@
-run="python3 ./레벨3+/네트워크.py"
+run="python3 ./레벨3+/가장먼노드.py"
 # token key = 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
 language="python3"
 #onBoot="echo Booting up!"
